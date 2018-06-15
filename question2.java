@@ -1,30 +1,34 @@
 package Strings;
 
+import java.util.*;
+
 public class question2 {
 
-	static String s = "xyz",sub;
-	static void printSub()
-	{
+	static void printSingle(String s) {
 		int N = s.length();
-		for(int size=0,temp=0;size<s.length();size++)
-		{
-			if(size==0)
-			{
-			for( ; temp<s.length();temp++)
-			{
-			System.out.println(s.charAt(temp));
-			}
-			}
-			else
-			for(;temp<s.length()-(s.length()-temp);temp++)
-			{
-				//for()
-			}
+		for (int i = 0; i < N; i++) {
+			System.out.println(s.charAt(i));
 		}
-	
-	}
-	public static void main(String[] args) {
-		printSub();
 	}
 
+	static void printMultiple(String s) {
+		for (int i = 0; i < s.length(); i++) {
+			for (int j = 0; j < s.length(); j++) {
+				System.out.print(s.charAt(i));
+				System.out.println(s.charAt(j));
+			}
+		}
+	}
+
+	static void printComplete(String s) {
+		System.out.println(s);
+	}
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		String str = sc.nextLine();
+		printSingle(str);
+		printMultiple(str);
+		printComplete(str);
+	}
 }
